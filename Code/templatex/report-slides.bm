@@ -1,14 +1,13 @@
-\pdbookmark{sec.1}{}{3}{Problem Definition}
-\pdbookmark{sec.1.slide}{sec.1}{4}{information security}
-\pdbookmark{sec.1.slide}{sec.1}{6}{Group Outlying Aspects Mining}
-\pdbookmark{sec.2}{}{11}{Related Work and Challenges}
-\pdbookmark{sec.2.slide}{sec.2}{12}{Related Work - Outlying Aspects Mining}
-\pdbookmark{sec.2.slide}{sec.2}{15}{Challenges (1)}
-\pdbookmark{sec.3}{}{18}{GOAM Algorithm}
-\pdbookmark{sec.3.slide}{sec.3}{20}{Step One - Group Feature Extraction}
-\pdbookmark{sec.3.slide}{sec.3}{21}{Step Two - Outlying Degree Scoring}
-\pdbookmark{sec.3.slide}{sec.3}{23}{Step Three - Outlying Aspects Identification}
-\pdbookmark{sec.4}{}{28}{Evaluation Results}
-\pdbookmark{sec.4.slide}{sec.4}{30}{Synthetic Dataset}
-\pdbookmark{sec.4.slide}{sec.4}{32}{NBA Dataset}
-\pdbookmark{sec.5}{}{36}{Conclusion}
+\pdbookmark{sec.0.slide}{sec.0}{2}{Overview}
+\pdbookmark{sec.1}{}{3}{Introduction}
+\pdbookmark{sec.1.slide}{sec.1}{4}{Overview}
+\pdbookmark{sec.2}{}{5}{Exploratory Data Analysis(EDA)}
+\pdbookmark{sec.2.slide}{sec.2}{6}{Dataset}
+\pdbookmark{sec.2.slide}{sec.2}{7}{How many Survived?}
+\pdbookmark{sec.2.slide}{sec.2}{8}{Analysis of the Features}
+\pdbookmark{sec.3}{}{16}{Feature Engineering and Data Cleaning}
+\pdbookmark{sec.3.slide}{sec.3}{18}{Removing Redundant features}
+\pdbookmark{sec.3.slide}{sec.3}{19}{Correlation Matrix after Data Cleaning}
+\pdbookmark{sec.4}{}{20}{Predictive Modeling}
+\pdbookmark{sec.4.slide}{sec.4}{22}{Prediction Accuracy}
+\pdbookmark{sec.5}{}{23}{Conclusion}
