@@ -1,0 +1,13 @@
+\pdbookmark{sec.0.slide}{sec.0}{2}{Overview}
+\pdbookmark{sec.1}{}{3}{\DIFdelbegin \DIFdel {Problem Definition1111}\DIFdelend \DIFaddbegin \DIFadd {Introduction}\DIFaddend }
+\pdbookmark{sec.1.slide}{sec.1}{4}{Overview}
+\pdbookmark{sec.2}{}{5}{\DIFadd {Exploratory Data Analysis(EDA)}}
+\pdbookmark{sec.2.slide}{sec.2}{6}{Dataset}
+\pdbookmark{sec.2.slide}{sec.2}{7}{How many Survived?}
+\pdbookmark{sec.2.slide}{sec.2}{8}{Analysis of the Features}
+\pdbookmark{sec.3}{}{13}{\DIFdel {Related Work and Challenges}}
+\pdbookmark{sec.4}{}{15}{\DIFdelbegin \DIFdel {GOAM Algorithm}\DIFdelend \DIFaddbegin \DIFadd {Feature Engineering and Data Cleaning}\DIFaddend }
+\pdbookmark{sec.4.slide}{sec.4}{17}{Removing Redundant features}
+\pdbookmark{sec.4.slide}{sec.4}{18}{Correlation Matrix after Data Cleaning}
+\pdbookmark{sec.5}{}{19}{\DIFadd {Predictive Modeling}}
+\pdbookmark{sec.5.slide}{sec.5}{21}{Prediction Accuracy}

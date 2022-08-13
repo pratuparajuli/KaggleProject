@@ -215,12 +215,25 @@ cf={Titanic Survial Prediction},
 \section{Exploratory Data Analysis(EDA)}
 
 \begin{slide}{Dataset}
- 
+  \twocolumn[
+\savevalue{lfrheight}=4.6cm,
+\savevalue{lfrprop}={
+linestyle=solid,framearc=.2,linewidth=1pt},
+rfrheight=\usevalue{lfrheight},
+rfrprop=\usevalue{lfrprop}
+]{
   \begin{figure}
     \centering
     %\selectcolormodel{rgb}
     \centerline{\includegraphics[width=1.0\textwidth,height=0.4\textwidth]{/Users/pratikshyaparajuli/Desktop/kaggle/KaggleProject/Code/templatex/graphics/titanicimg/datatable.eps}}
   \end{figure}
+  }{
+  \begin{figure}
+    %\centering
+    %\selectcolormodel{rgb}
+    \centerline{\includegraphics[width=1.0\textwidth,height=0.4\textwidth]{/Users/pratikshyaparajuli/Desktop/kaggle/KaggleProject/Code/templatex/graphics/titanicimg/null_values.eps}}
+  \end{figure}
+  }
   \begin{itemize}
     \item
     \textcolor{orange}{Age, Sex, Embarked} have null values.
@@ -376,7 +389,7 @@ Continuous Features in the dataset - \textcolor{orange}{Age}
   \caption{Survival rate with Age }\label{fig:age}
 \end{figure}
 \textcolor{orange}{Observations:}\\
-1)The Toddlers(age<5) were saved in large numbers(The Women and Child First Policy).\\
+1)The Toddlers(age<5) were saved in large numbers.\\
 2)The oldest Passenger was saved(80 years).\\
 3)Maximum number of deaths were in the age group of 30-40.
 \end{slide}
@@ -460,15 +473,15 @@ Continuous Features in the dataset - \textcolor{orange}{Age}
 
 %%==========================================================================================
 %%
-\begin{slide}[toc=,bm=]{Relation Between The Features}
+%\begin{slide}[toc=,bm=]{Relation Between The Features}
 %\vspace{0.1cm}
-\begin{figure}
-  \centering
+%\begin{figure}
+  %\centering
   %\selectcolormodel{rgb}
-  \centerline{\includegraphics[scale=0.5,width=1.1\textwidth,height=0.4\textwidth]{/Users/pratikshyaparajuli/Desktop/kaggle/KaggleProject/Code/templatex/graphics/titanicimg/relation-between-features.eps}}
-  \caption{Relation Between The Features}\label{fig:Heat map}
-\end{figure}
-\end{slide}
+  %\centerline{\includegraphics[scale=0.5,width=1.1\textwidth,height=0.4\textwidth]{/Users/pratikshyaparajuli/Desktop/kaggle/KaggleProject/Code/templatex/graphics/titanicimg/relation-between-features.eps}}
+  %\caption{Relation Between The Features}\label{fig:Relation Between Features}
+%\end{figure}
+%\end{slide}
 %%
 %%==========================================================================================
 
@@ -751,7 +764,7 @@ Decision Tree
    \item 
    Train Data_size : 0.7 and Test Data_size : 0.3
    \item 
-   Total sample size = 623; training sample size = 623, testing sample size = 268
+   Total sample size = 891; training sample size = 623, testing sample size = 268
   \end{itemize}
 
 \begin{table}

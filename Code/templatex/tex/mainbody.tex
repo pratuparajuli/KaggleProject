@@ -1,201 +1,82 @@
 %=================================================================
 \section{Introduction}\label{sec-intro}
+The sinking of the Titanic is one of the most infamous shipwrecks in history.
+n this project, we aim to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc).
+Problem Definition: Knowing from a training set of samples listing passengers who survived or did not survive the Titanic disaster, can our model determine based on a given test dataset not containing the survival information, if these passengers in the test dataset survived or not.
 
+\section{Exploratory Data Analysis} \label{sec-preliminaries}
 
-%\todo{Narrow down to a topic; Dig a hole; Fill the hole}
-\todo{Formula for Introduction}
+There are two dataset provided for analysis. 
+One dataset is titled `train.csv` and the other is titled `test.csv`.
+Train.csv will contain the details of a subset of the passengers on board (891 to be exact) and importantly, will reveal whether they survived or not, also known as the “ground truth”.
 
+The `test.csv` dataset contains similar information but does not disclose the “ground truth” for each passenger. It’s your job to predict these outcomes.
 
-
-%\gangli{``narrow in on topic'' reminds you 
-%that readers and reviewers only know that this is a AI or HTM research paper (and maybe have read the title/abstract). 
-%You need to help them figure out what topic and area of research paper this is. 
-%You _don't_ need to wax poetic about the topic's importance.}
-
-%\gangli{`dig a hole'' reminds you that 
-%you need to convince the reader that there's a problem with the state of the world. 
-%Prior work may exist but it's either missing something important or there's a missing opportunity. 
-%The reader should be drooling for a bright future just out of reach.}
-
-%\gangli{``fill the hole'' reminds you to show the reader 
-%how and why the paper they're reading will fix these problems and deliver us into a better place. 
-%You don't need a whirlwind summary of the technical details, 
-%but you need readers convinced (and in a good mood) to keep reading.}
-
-\gangli{A good paper introduction is fairly formulaic.} 
-If you follow a simple set of rules, 
-you can write a very good introduction. 
-The following outline can be varied. 
-For example, 
-you can use two paragraphs instead of one, 
-or you can place more emphasis on one aspect of the intro than another. 
-But in all cases, 
-all of the points below need to be covered in an introduction, 
-and in most papers, 
-you don't need to cover anything more in an introduction.
-
-
-
-%\todo{The importance of the area}
-%\blindtext
-\todo{Motivation}
-At a high level, 
-what is the problem area you are working in and why is it important? 
-It is important to set the larger context here. 
-Why is the problem of interest and importance to the larger community?
-
-
-%\todo{The problems faced by most current methods}
-%\blindtext
-\todo{What is the specific problem considered in this paper?}
-This paragraph narrows down the topic area of the paper. 
-In the first paragraph you have established general context and importance. 
-Here you establish specific context and background.
-
-%\todo{What can be addressed by existing methods; Why those problems are challenges to existing methods?}
-%\blindtext
-\todo{Contribution}
-"In this paper, we show that ...". 
-This is the key paragraph in the intro - you summarize, 
-in one paragraph, 
-what are the main contributions of your paper given the context 
-you have established in paragraphs 1 and 2. 
-What is the general approach taken? 
-Why are the specific results significant? 
-This paragraph must be really good. 
-
-You should think about how to structure these one or 
-two paragraph summaries of what your paper is all about. 
-If there are two or three main results, 
-then you might consider itemizing them with bullets or in test. 
+Using the patterns found in the train.csv data, we predict whether the other 418 passengers on board (found in test.csv) survived.
 \begin{itemize}
-	\item e.g., First ...
-	\item e.g., Second ...
-	\item e.g., Third ...
+\item
+Categorical Features in the dataset - \textcolor{orange}{Sex, Embarked}
+\item
+Ordinal Features in the dataset - \textcolor{orange}{Pclass}
+\item
+Continuous Features in the dataset - \textcolor{orange}{Age}
 \end{itemize}
-If the results fall broadly into two categories, 
-you can bring out that distinction here. 
-For example, "Our results are both theoretical and applied in nature. 
-(two sentences follow, one each on theory and application)"
+\begin{figure}
+  \centering
+  %\selectcolormodel{rgb}
+  \centerline{\includegraphics[width=1.0\textwidth,height=0.5\textwidth]{./graphics/titanicimg/allfeatures.eps}}
+\end{figure}
 
-%\todo{What provides the motivation of this work? What are the research issues? What is the rationale of this work? }
-%\blindtext
-\todo{At a high level what are the differences in what you are doing, and what others have done? }
-Keep this at a high level, 
-you can refer to a future section where specific details and differences will be given. 
-But it is important for the reader to know at a high level, 
-what is new about this work compared to other work in the area.
+\section{Observation of the Feature} \label{sec-analysis}
+Sex: The chance of survival for women is high as compared to men.\\
+  Pclass:There is a visible trend that being a 1st class passenger gives you better chances of survival. The survival rate for Pclass3 is very low. For women, the chance of survival from Pclass1 is almost 1 and is high too for those from Pclass2. Money Wins!!!.\\
+  Age: Children less than 5-10 years do have a high chance of survival. Passengers between age group 15 to 35 died a lot.\\
+  Embarked: This is a very interesting feature. The chances of survival at C looks to be better than even though the majority of Pclass1 passengers got up at S. Passengers at Q were all from Pclass3.\\
+  Parch+SibSp: Having 1-2 siblings,spouse on board or 1-3 Parents shows a greater chance of probability rather than being alone or having a large family travelling with you.
 
-%\todo{What we have done and what are the contributions.}
-%\blindtext
-\todo{A roadmap for the rest of the paper}
-"The remainder of this paper is structured as follows..." 
-Give the reader a roadmap for the rest of the paper. 
-Avoid redundant phrasing, 
-"In Section 2, In section 3, ... In Section 4, ... " etc.
-
-\gangli{A few general tips:
-Don't spend a lot of time into the introduction 
-telling the reader about what you don't do in the paper. 
-Be clear about what you do do.
-Does each paragraph have a theme sentence that sets the stage for the entire paragraph? Are the sentences and topics in the paragraph all related to each other?}
-
-\gangli{Does each paragraph have a theme 
-sentence that sets the stage for the entire paragraph? 
-Are the sentences and topics in the paragraph all related to each other?}
-
-\gangli{Do all of your tenses match up in a paragraph?}
-
-Test citation~\cite{BL12J01}. 
-\begin{JournalOnly}
-and~\citep{BJL11J01} or~\citet{BJL11J01}.
-\end{JournalOnly}
-
-This is for~\cref{tbl:overall-experiments}, 
-\todo[fancyline]{Testing.}
-and this is for~\cref{sec-conclusions}.
-\todo[noline]{A note with no line back to the text.}%
-\gangli{This is comment from Gang.}
-\qwu{Response from QW}
-
-Number:
-\num{123}.
-\numlist{10;30;50;70},
-\numrange{10}{30},
-\SIlist{10;30;45}{\metre},
-and
-\SI{10}{\percent}
-
-\missingfigure[figcolor=white]{Testing figcolor}
-
-
-\begin{ConferenceOnly}
-We have \SI{10}{\hertz},
-\si{\kilogram\metre\per\second},
-the range: \SIrange{10}{100}{\hertz}.
-$\nicefrac[]{1}{2}$.
-
-\missingfigure{Make a sketch of the structure of a trebuchet.}
-
-\end{ConferenceOnly}
-
-
-For~\cref{eq:test},
-as shown below:
-
-\begin{equation}\label{eq:test}
-a = b \times \sqrt{ab}
-\end{equation}
-
-\blindmathpaper
-
-\section{Preliminaries} \label{sec-preliminaries}
-
-\blindtext
-
-\gliMarker  %TODO: GLi Here
-
-
-\section{Method} \label{sec-method}
-
-\blindtext
-\blindlist{itemize}[3]
-\blinditemize
-\blindenumerate
-
-\blindmathtrue
-\blindmathfalse
-\blinddescription
-
-\qwuMarker %TODO: QWu Here
-
-\section{Experiment and Analysis} \label{sec-experiment}
-
-
+\section{Correlation between the features} \label{sec-experiment}
+\begin{figure}
+  \centering
+  %\selectcolormodel{rgb}
+  \centerline{\includegraphics[width=1.0\textwidth,height=0.5\textwidth]{./graphics/titanicimg/heatmap.eps}}
+  \caption{Interpreting the heatmap}\label{fig:Heat map}
+\end{figure}
+Now from the above heatmap,we can see that the features are not much correlated. The highest correlation is between SibSp and Parch i.e 0.41. So we can carry on with all features.
+\section{Feature Engineering and Data cleaning} \label{sec-datacleaning}
+The next idea is to define new features based on the existing ones that allow for a split into survived/not-survived with higher confidence than the existing features.
+Some of the features like Age is converted into suitable form like Age-Band for modeling. This part of the analysis is called Feature Engineering
+We need to convert the continuous values like age into categorical values by either Binning or Normalisation. It is necessary to remove redundant features like Name, Ticket, Fare, etc.
+\section{Predictive Modeling} \label{sec-modeling}
+We have gained some insights from the EDA part. But with that, we cannot accurately predict or tell whether a passenger will survive or die. So now we will predict the whether the Passenger will survive or not using some great Classification Algorithms.\\
+Our problem is a classification and regression problem. We want to identify relationship between output (Survived or not) with other variables or features (Gender, Age, Port...). We are also perfoming a category of machine learning which is called supervised learning as we are training our model with a given dataset. With these two criteria - Supervised Learning plus Classification and Regression, we can narrow down our choice of models to a few.\\
+1)Logistic Regression\\
+2)Support Vector Machines(Linear and radial)\\
+3)Random Forest\\
+4)K-Nearest Neighbours\\
+5)Naive Bayes\\
+6)Decision Tree\\
+Total sample size = 623; training sample size = 623, testing sample size = 268\\
 \begin{table}  \centering
-  \caption{Precision Comparison on Event Detection Methods}
+  \caption{Accuracy Comparison of different Classifier Algorithms}
   \label{tbl:overall-experiments}
   \begin{tabular}{cccc}
 \toprule
     % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-    & OR Event Detection & AC Event Detection & TC Event Detection \\
+     & Acuracy \\
 \midrule
-    precision & 0.83 & 0.69 & 0.46 \\
-    recall & 0.68 & 0.48 & 0.36 \\
-    F-score & 0.747 & 0.57 & 0.4 \\
+    Radial Support Vector Machines(rbf-SVM)   & 0.835820895522388 \\
+    Linear Support Vector Machine(linear-SVM) & 0.8171641791044776 \\
+    Logistic Regression & 0.8134328358208955 \\
+    Decision Tree & 0.8059701492537313 \\
+    K-Nearest Neighbours(KNN) & 0.832089552238806 \\
+    Gaussian Naive Bayes & 0.8134328358208955 \\
+    Random Forests & 0.8208955223880597\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-
 \section{Conclusions} \label{sec-conclusions}
-
-\blindtext
-
-\section*{Acknowledgement}
-
-\lipsum[1]
+This is only the basic modeling of the data. The results can be further enhanced. To overcome the model variance, and get a generalized model,we can use Cross Validation.
 
 
-The authors would like to thank \ldots
 
